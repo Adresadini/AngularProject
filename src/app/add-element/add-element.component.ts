@@ -6,7 +6,7 @@ import { CustomValidators } from "../helpers/custom-validators";
 @Component({
   selector: 'app-add-element',
   templateUrl: './add-element.component.html',
-  styleUrls: ['./add-element.component.scss']
+  styleUrls: ['./add-element.component.css']
 })
 export class AddElementComponent implements OnInit {
 
