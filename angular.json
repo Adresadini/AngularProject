@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "c602d088-dff0-465f-b99e-130b4dcea0d2"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-mountain-hikes": {
+    "proiect-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,11 +17,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/my-mountain-hikes",
+            "outputPath": "dist/proiect-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -32,13 +30,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -68,24 +60,23 @@
                 }
               ]
             }
-          },
-          "defaultConfiguration": ""
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-mountain-hikes:build"
+            "browserTarget": "proiect-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "my-mountain-hikes:build:production"
+              "browserTarget": "proiect-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-mountain-hikes:build"
+            "browserTarget": "proiect-angular:build"
           }
         },
         "test": {
@@ -122,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "my-mountain-hikes:serve"
+            "devServerTarget": "proiect-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "my-mountain-hikes:serve:production"
+              "devServerTarget": "proiect-angular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "my-mountain-hikes"
+  "defaultProject": "proiect-angular"
 }
