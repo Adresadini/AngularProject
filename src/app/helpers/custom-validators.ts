@@ -8,7 +8,7 @@ export class CustomValidators {
 
   public static password(control: AbstractControl) {
     const regex: RegExp =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+/;
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]+/;
     return regex.test(control.value) ? null : { password: true };
   }
 

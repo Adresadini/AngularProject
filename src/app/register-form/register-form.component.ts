@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomValidators } from '../helpers/custom-validators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -12,6 +13,7 @@ export class RegisterFormComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
   hide = true;
   user: any = {};
+  router: Router;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -81,12 +83,13 @@ export class RegisterFormComponent implements OnInit {
   }
 
   onRegistration() {
+    //Replace with better conditions
     if (
       this.email.invalid ||
       this.password.invalid ||
-      this.passwordConfirmation.value != this.password.value ||
+      this.passwordConfirmation.invalid ||
       this.lastName.invalid ||
-      this.firstName
+      this.firstName.invalid
     ) {
       this.openErrorSnackBar();
       return;
@@ -96,6 +99,7 @@ export class RegisterFormComponent implements OnInit {
     this.addUser(this.user);
 
     this.openSuccessSnackBar();
+    this.router.navigateByUrl('login');
   }
 
   addUser(user) {

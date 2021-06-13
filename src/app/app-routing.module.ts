@@ -5,15 +5,22 @@ import { RegisterFormComponent } from '@app/register-form/register-form.componen
 
 const routes: Routes = [
   {
-    path:'login', component:LoginFormComponent
+    path: 'login',
+    component: LoginFormComponent,
   },
   {
-    path:'register', component:RegisterFormComponent
-  }
+    path: 'register',
+    component: RegisterFormComponent,
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
