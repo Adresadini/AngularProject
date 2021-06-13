@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+}
+.make-green{
+    background-color: green;
+}
+
+.make-yellow{
+    background-color: yellow;
+}
+
+.make-red{
+    background-color: red;
+}
