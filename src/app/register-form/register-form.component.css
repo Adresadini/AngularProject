@@ -1,0 +1,17 @@
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-card {
+  max-width: 400px;
+}
+
+.field-separation {
+  margin-bottom: 25px;
+}
+
+.register-button {
+  background-color: steelblue;
+}
