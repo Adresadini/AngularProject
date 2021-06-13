@@ -8,10 +8,12 @@
   max-width: 400px;
 }
 
-.field-separation {
-  margin-bottom: 25px;
+.field {
+  margin-bottom: 15px;
+  display: block;
 }
 
 .register-button {
+  color: azure;
   background-color: steelblue;
 }

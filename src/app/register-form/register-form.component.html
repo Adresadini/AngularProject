@@ -6,14 +6,14 @@
     <mat-card-content>
       <!-- Email Input Field -->
       <form [formGroup]="registerForm">
-        <mat-form-field class="field-separation" appearance="fill">
-          <mat-label>Enter your e-mail</mat-label>
+        <mat-form-field class="field" appearance="fill">
+          <mat-label>E-mail</mat-label>
           <input matInput type="text" [formControl]="email" />
-          <mat-error *ngIf="email.invalid">Email address is invalid</mat-error>
+          <mat-error *ngIf="email.invalid">Email address is invalid.</mat-error>
         </mat-form-field>
         <!-- Password Input Field -->
-        <mat-form-field class="field-separation">
-          <mat-label>Enter a password</mat-label>
+        <mat-form-field class="field" appearance="fill">
+          <mat-label>Password</mat-label>
           <input
             matInput
             [type]="hide ? 'password' : 'text'"
@@ -29,13 +29,13 @@
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
           <mat-error *ngIf="password.invalid">
-            Password must contain one uppercase,lowercase,number and special
-            charcter
+            Must be atleast 6 characters long. Must contain one uppercase,
+            lowercase, number and special character.
           </mat-error>
         </mat-form-field>
         <!-- Password Confirmation Input -->
-        <mat-form-field class="field-separation" appearance="fill">
-          <mat-label>Re-enter password</mat-label>
+        <mat-form-field class="field" appearance="fill">
+          <mat-label>Password Confirmation</mat-label>
           <input
             matInput
             [type]="hide ? 'password' : 'text'"
@@ -51,27 +51,31 @@
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
           <mat-error *ngIf="passwordConfirmation.invalid">
-            Password doesn't match
+            Must match password.
           </mat-error>
         </mat-form-field>
         <!-- Last Name Input Field -->
-        <mat-form-field class="field-separation" appearance="fill">
-          <mat-label>Enter your last name</mat-label>
+        <mat-form-field class="field" appearance="fill">
+          <mat-label>Last Name</mat-label>
           <input matInput type="text" [formControl]="lastName" />
-          <mat-error *ngIf="lastName.invalid"> Enter your last name </mat-error>
+          <mat-error *ngIf="lastName.invalid"> Last Name required. </mat-error>
         </mat-form-field>
         <!-- First Name Input Field -->
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your first name</mat-label>
+        <mat-form-field class="field" appearance="fill">
+          <mat-label>First Name</mat-label>
           <input matInput type="text" [formControl]="firstName" />
           <mat-error *ngIf="firstName.invalid">
-            Enter your first name
+            First Name required.
           </mat-error>
         </mat-form-field>
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="onRegistration()">
+      <button
+        mat-raised-button
+        class="register-button"
+        (click)="onRegistration()"
+      >
         Register
       </button>
     </mat-card-actions>

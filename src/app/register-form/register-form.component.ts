@@ -56,7 +56,7 @@ export class RegisterFormComponent implements OnInit {
         lastName: ['', Validators.required],
         firstName: ['', Validators.required],
       },
-      //Remove this shit and make it use param
+
       {
         validator: this.mustMatch('password', 'passwordConfirmation'),
       }
@@ -110,16 +110,20 @@ export class RegisterFormComponent implements OnInit {
   }
 
   openSuccessSnackBar() {
-    this._snackBar.open('Register Successful!', 'OK', {
+    this._snackBar.open('Register Successful!', '', {
       horizontalPosition: 'start',
       verticalPosition: 'bottom',
+      panelClass: ['success-snackbar'],
+      duration: 3000,
     });
   }
 
   openErrorSnackBar() {
-    this._snackBar.open('Register Failed! Check fields and try again.', 'OK', {
+    this._snackBar.open('Register Failed! Check fields and try again.', '', {
       horizontalPosition: 'start',
       verticalPosition: 'bottom',
+      panelClass: ['error-snackbar'],
+      duration: 3000,
     });
   }
 

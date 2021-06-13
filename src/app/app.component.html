@@ -1,16 +1,12 @@
 <div>
   <mat-toolbar class="custom-toolbar">
-    <span>MyMountainHikes</span>
-    <span class="right-align"></span>
+    <span class="filler">MyMountainHikes</span>
     <!--Login-->
-    <span>
-      <a class="azure-text" routerLink="login"> Login </a>
-    </span>
-    <span class="spacer"></span>
+    <button mat-raised-button class="item gap" routerLink="login">Login</button>
     <!--Register-->
-    <span>
-      <a class="azure-text" routerLink="register"> Register </a>
-    </span>
+    <button mat-raised-button class="item gap" routerLink="register">
+      Register
+    </button>
   </mat-toolbar>
 </div>
 
