@@ -13,9 +13,9 @@ import { AddElementComponent } from '../add-element/add-element.component';
 export class MyTableComponent implements OnInit, AfterViewInit {
 
   myList = [
-    {position:1, name: 'Munte', startPoint: 'lol' ,endPoint: 'lol', touristicMarking: 'lol', length: 3, levelDifference: 300,date: 'lol'},
-    {position:2, name: 'Munte 2', startPoint: 'lol' ,endPoint: 'lol', touristicMarking: 'lol', length: 3, levelDifference: 600,date: 'lol'},
-    {position:3, name: 'Munte 3', startPoint: 'lol' ,endPoint: 'lol', touristicMarking: 'lol', length: 3, levelDifference: 1300,date: 'lol'},
+    {position:1, name: 'Munte', startPoint: 'Start 1' ,endPoint: 'End 1', touristicMarking: 'Group', length: 500, levelDifference: 300,date: '20-06-2000'},
+    {position:2, name: 'Munte 2', startPoint: 'Start 2' ,endPoint: 'End 2', touristicMarking: 'Group', length: 800, levelDifference: 600,date: '07-07-2021'},
+    {position:3, name: 'Munte 3', startPoint: 'Start 3' ,endPoint: 'End 3', touristicMarking: 'Group', length: 1700, levelDifference: 1300,date: '02-14-2012'},
   ];
 
   displayedColumns: string[] = ['position', 'name','startPoint','endPoint','touristicMarking','length','levelDifference','date' ];
