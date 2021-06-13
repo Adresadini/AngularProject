@@ -3,12 +3,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-//import { AddElementComponent } from '../modals/add-element/add-element.component';
+import { AddElementComponent } from '../add-element/add-element.component';
 
 @Component({
   selector: 'app-my-table',
   templateUrl: './my-table.component.html',
-  styleUrls: ['./my-table.component.scss']
+  styleUrls: ['./my-table.component.css']
 })
 export class MyTableComponent implements OnInit, AfterViewInit {
 
@@ -80,19 +80,19 @@ export class MyTableComponent implements OnInit, AfterViewInit {
     this.dataSource = new MatTableDataSource(this.myList);
   }
 
-  // openDialog() {
-  //   const dialogRef = this.dialog.open(AddElementComponent, {
-  //     width: '300px',
-  //     // data: {name: this.name, animal: this.animal}
-  //   });
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log(result);
-  //     if (result) {
-  //       this.myList.push(result.value);
-  //       this.dataSource.data = this.myList;
-  //     }
-  //   });
-  // }
+  openDialog() {
+    const dialogRef = this.dialog.open(AddElementComponent, {
+      width: '300px',
+      // data: {name: this.name, animal: this.animal}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if (result) {
+        this.myList.push(result.value);
+        this.dataSource.data = this.myList;
+      }
+    });
+  }
 
     
   }

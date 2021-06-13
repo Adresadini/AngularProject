@@ -17,9 +17,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MyTableComponent } from './my-table/my-table.component';
+import { AddElementComponent } from './add-element/add-element.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginFormComponent, RegisterFormComponent, MyTableComponent],
+  declarations: [AppComponent, LoginFormComponent, RegisterFormComponent, MyTableComponent, AddElementComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
