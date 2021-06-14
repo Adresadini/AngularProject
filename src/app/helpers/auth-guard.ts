@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
   ): boolean {
     //check some condition
     if (localStorage.getItem('ConnectedUser') === AppComponent.nullUser) {
-      this._router.navigateByUrl('login');
+      this._router.navigateByUrl('/login');
       this.openErrorSnackBar();
       return false;
     }

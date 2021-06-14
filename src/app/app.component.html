@@ -2,11 +2,11 @@
   <mat-toolbar class="custom-toolbar">
     <span class="filler">MyMountainHikes</span>
     <!--Login-->
-    <span *ngIf="logoutShow">
+    <span *ngIf="router.url === '/home' ? true : false">
       <button
         mat-raised-button
         class="item"
-        routerLink="login"
+        routerLink="/login"
         (click)="onLogout()"
       >
         Logout

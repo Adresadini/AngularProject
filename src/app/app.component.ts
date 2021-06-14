@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,20 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   static nullUser: string;
-  static show: boolean;
 
-  constructor() {
+  constructor(public router: Router) {
     AppComponent.nullUser = JSON.stringify('');
     localStorage.setItem('ConnectedUser', AppComponent.nullUser);
-    AppComponent.show = false;
   }
 
   onLogout() {
-    AppComponent.show = false;
     localStorage.setItem('ConnectedUser', AppComponent.nullUser);
-  }
-
-  get logoutShow() {
-    return AppComponent.show;
   }
 }

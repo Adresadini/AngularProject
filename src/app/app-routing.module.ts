@@ -4,18 +4,15 @@ import { LoginFormComponent } from '@app/login-form/login-form.component';
 import { RegisterFormComponent } from '@app/register-form/register-form.component';
 import { MyTableComponent } from '@app/my-table/my-table.component';
 import { AuthGuard } from './helpers/auth-guard';
-import { LogoutGuard } from './helpers/logout-guard';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginFormComponent,
-    canActivate: [LogoutGuard],
   },
   {
     path: 'register',
     component: RegisterFormComponent,
-    canActivate: [LogoutGuard],
   },
   {
     path: 'home',
@@ -24,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: '/login',
     pathMatch: 'full',
   },
 ];
@@ -32,6 +29,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard, LogoutGuard],
+  providers: [AuthGuard],
 })
 export class AppRoutingModule {}

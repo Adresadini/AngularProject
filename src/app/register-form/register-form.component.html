@@ -71,13 +71,11 @@
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button
-        mat-raised-button
-        class="register-button"
-        (click)="onRegistration()"
-      >
+      <button mat-raised-button class="button" (click)="onRegistration()">
         Register
       </button>
+      <div class="divider"></div>
+      <button mat-raised-button class="button" routerLink="/login">Back</button>
     </mat-card-actions>
   </mat-card>
 </div>
