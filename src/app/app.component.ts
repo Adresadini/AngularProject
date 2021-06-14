@@ -6,16 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  user: any;
+  static nullUser: string;
   static show: boolean;
 
   constructor() {
+    localStorage.setItem('ConnectedUser', AppComponent.nullUser);
     AppComponent.show = false;
+    AppComponent.nullUser = JSON.stringify(null);
   }
 
   onLogout() {
-    this.user = null;
     AppComponent.show = false;
+    localStorage.setItem('ConnectedUser', AppComponent.nullUser);
   }
 
   get logoutShow() {
