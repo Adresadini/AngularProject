@@ -2,14 +2,16 @@
   <mat-toolbar class="custom-toolbar">
     <span class="filler">MyMountainHikes</span>
     <!--Login-->
-    <button
-      mat-raised-button
-      class="item"
-      routerLink="logout"
-      skipLocationChange
-    >
-      Logout
-    </button>
+    <span *ngIf="logoutShow">
+      <button
+        mat-raised-button
+        class="item"
+        routerLink="login"
+        (click)="onLogout()"
+      >
+        Logout
+      </button>
+    </span>
   </mat-toolbar>
 </div>
 

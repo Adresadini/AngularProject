@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AppComponent } from '@app/app.component';
 
 @Component({
   selector: 'app-login-form',
@@ -49,7 +50,9 @@ export class LoginFormComponent implements OnInit {
           }
 
           localStorage.setItem('ConnectedUser', JSON.stringify(value.email));
-          (<any>this.router).navigate(['home']);
+          AppComponent.show = true;
+          this.router.navigateByUrl('home');
+          this.openSuccessSnackBar();
         }
       });
       if (!ok) {
@@ -77,7 +80,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   onRegister() {
-    this.router.navigateByUrl('register', { replaceUrl: true });
+    this.router.navigateByUrl('register');
   }
 
   get email() {

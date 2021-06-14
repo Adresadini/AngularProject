@@ -7,10 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   user: any;
+  static show: boolean;
 
-  constructor() {}
+  constructor() {
+    AppComponent.show = false;
+  }
 
   onLogout() {
     this.user = null;
+    AppComponent.show = false;
+  }
+
+  get logoutShow() {
+    return AppComponent.show;
   }
 }
