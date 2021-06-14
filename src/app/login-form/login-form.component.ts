@@ -20,7 +20,6 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
-    localStorage.setItem('ConnectedUser', null);
   }
 
   initForm() {
