@@ -72,7 +72,7 @@ export class MyTableComponent implements OnInit, AfterViewInit {
 
   searchBySymbol() {
     console.log(this.symbolSearchValue);
-    this.dataSource.data = this.myList.filter(e => e.name.toLowerCase() === this.symbolSearchValue.toLowerCase());
+    this.dataSource.data = this.myList.filter(e => e.name.toLowerCase().includes(this.symbolSearchValue.toLowerCase()));
   }
 
   clearSymbolSearch() {
