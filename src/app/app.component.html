@@ -4,15 +4,11 @@
     <!--Login-->
     <button
       mat-raised-button
-      class="item gap"
-      routerLink="home"
-      (click)="onLogout()"
+      class="item"
+      routerLink="logout"
+      skipLocationChange
     >
       Logout
-    </button>
-    <!--Register-->
-    <button mat-raised-button class="item gap" routerLink="register">
-      Register
     </button>
   </mat-toolbar>
 </div>

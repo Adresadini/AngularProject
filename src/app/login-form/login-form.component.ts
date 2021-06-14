@@ -77,7 +77,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   onRegister() {
-    (<any>this.router).navigate(['/register']);
+    this.router.navigateByUrl('register', { replaceUrl: true });
   }
 
   get email() {

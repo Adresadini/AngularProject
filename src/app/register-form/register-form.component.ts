@@ -99,7 +99,7 @@ export class RegisterFormComponent implements OnInit {
     this.addUser(this.user);
 
     this.openSuccessSnackBar();
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('login', { replaceUrl: true });
   }
 
   addUser(user) {
