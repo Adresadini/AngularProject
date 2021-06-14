@@ -10,9 +10,9 @@ export class AppComponent {
   static show: boolean;
 
   constructor() {
+    AppComponent.nullUser = JSON.stringify('');
     localStorage.setItem('ConnectedUser', AppComponent.nullUser);
     AppComponent.show = false;
-    AppComponent.nullUser = JSON.stringify(null);
   }
 
   onLogout() {

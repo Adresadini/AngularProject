@@ -2,25 +2,30 @@ table {
   width: 100%;
 }
 .make-green {
-  background-color: green;
+  background-color: palegreen;
 }
 
 .make-yellow {
-  background-color: yellow;
+  background-color: palegoldenrod;
 }
 
 .make-red {
-  background-color: red;
+  background-color: palevioletred;
 }
 
-.search-button {
+.white-button {
   color: steelblue;
   background-color: white;
 }
 
-.button {
+.blue-button {
   color: white;
   background-color: steelblue;
+}
+
+.red-button {
+  color: white;
+  background-color: crimson;
 }
 
 .gap {

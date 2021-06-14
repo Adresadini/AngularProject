@@ -58,6 +58,8 @@ export class LoginFormComponent implements OnInit {
       if (!ok) {
         this.openErrorSnackBar();
       }
+    } else {
+      this.openErrorSnackBar();
     }
   }
 

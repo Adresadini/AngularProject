@@ -9,7 +9,7 @@ import {
 import { AppComponent } from '@app/app.component';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class LogoutGuard implements CanActivate {
   constructor(private _router: Router, private _snackBar: MatSnackBar) {}
 
   canActivate(
@@ -17,8 +17,8 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): boolean {
     //check some condition
-    if (localStorage.getItem('ConnectedUser') === AppComponent.nullUser) {
-      this._router.navigateByUrl('login');
+    if (localStorage.getItem('ConnectedUser') !== AppComponent.nullUser) {
+      this._router.navigateByUrl('home');
       this.openErrorSnackBar();
       return false;
     }
@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate {
   }
 
   openErrorSnackBar() {
-    this._snackBar.open('Please login to proceed!', '', {
+    this._snackBar.open('Please logout to proceed!', '', {
       horizontalPosition: 'start',
       verticalPosition: 'bottom',
       panelClass: ['error-snackbar'],
