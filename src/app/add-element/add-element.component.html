@@ -1,37 +1,52 @@
 <h1 mat-dialog-title>New trail</h1>
 <div mat-dialog-content>
+  <form [formGroup]="trailForm">
+    <mat-form-field>
+      <input matInput placeholder="Position" formControlName="position" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Start Point" formControlName="startPoint" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="End Point" formControlName="endPoint" />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Touristic Marking"
+        formControlName="touristicMarking"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Length" formControlName="length" />
+      <!--<mat-error *ngIf="length.errors?.notNumber">Only numbers accepted</mat-error>-->
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Level Difference"
+        formControlName="levelDifference"
+      />
+      <!-- <mat-error *ngIf="levelDifference.errors?.notNumber">Only numbers accepted</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Date" formControlName="date" />
+      <!-- <mat-error *ngIf="date.errors?.date">Only numbers accepted</mat-error> -->
+    </mat-form-field>
+  </form>
 
-    <form [formGroup]="trailForm">
-        <mat-form-field>
-            <input matInput placeholder="Position" formControlName="position">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Name" formControlName="name">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Start Point" formControlName="startPoint">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="End Point" formControlName="endPoint">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Touristic Marking" formControlName="touristicMarking">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Length" formControlName="length">
-            <!-- <mat-error *ngIf="length.errors?.notNumber">Only numbers accepted</mat-error> -->
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Level Difference" formControlName="levelDifference">
-            <!-- <mat-error *ngIf="levelDifference.errors?.notNumber">Only numbers accepted</mat-error> -->
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Date" formControlName="date">
-            <!-- <mat-error *ngIf="date.errors?.date">Only numbers accepted</mat-error> -->
-        </mat-form-field>
-    </form>
-
-    <div mat-dialog-actions>
-        <button mat-button (click)="onNoClick()">Cancel</button>
-        <button mat-button [mat-dialog-close]="trailForm" [disabled]= "trailForm.invalid" cdkFocusInitial>Ok</button>
-    </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button
+      mat-button
+      [mat-dialog-close]="trailForm"
+      [disabled]="trailForm.invalid"
+      cdkFocusInitial
+    >
+      Ok
+    </button>
+  </div>
+</div>

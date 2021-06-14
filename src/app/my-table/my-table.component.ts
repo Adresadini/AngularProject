@@ -18,7 +18,7 @@ export class MyTableComponent implements OnInit, AfterViewInit {
     {position:3, name: 'Munte 3', startPoint: 'Start 3' ,endPoint: 'End 3', touristicMarking: 'Group', length: 1700, levelDifference: 1300,date: '02-14-2012'},
   ];
 
-  displayedColumns: string[] = ['position', 'name','startPoint','endPoint','touristicMarking','length','levelDifference','date' ];
+  displayedColumns: string[] = ['position', 'name','startPoint','endPoint','touristicMarking','length','levelDifference','date', 'actions' ];
   dataSource;
   symbolSearchValue;
   lastPosition;
@@ -35,12 +35,7 @@ export class MyTableComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.myList);
 
-    this.trailForm = this.fb.group({
-      position: [''],
-      name: [''],
-      weight: [''],
-      symbol: ['']
-    })
+    this.trailForm = this.fb.group({});
   }
 
   ngAfterViewInit() {
