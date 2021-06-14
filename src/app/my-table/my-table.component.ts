@@ -70,12 +70,12 @@ export class MyTableComponent implements OnInit, AfterViewInit {
     }
   }
 
-  searchBySymbol() {
+  searchByName() {
     console.log(this.symbolSearchValue);
     this.dataSource.data = this.myList.filter(e => e.name.toLowerCase().includes(this.symbolSearchValue.toLowerCase()));
   }
 
-  clearSymbolSearch() {
+  clearNameSearch() {
     this.symbolSearchValue = "";
     this.dataSource = new MatTableDataSource(this.myList);
   }
