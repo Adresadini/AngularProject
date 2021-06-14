@@ -1,14 +1,28 @@
 table {
-    width: 100%;
+  width: 100%;
 }
-.make-green{
-    background-color: green;
-}
-
-.make-yellow{
-    background-color: yellow;
+.make-green {
+  background-color: green;
 }
 
-.make-red{
-    background-color: red;
+.make-yellow {
+  background-color: yellow;
+}
+
+.make-red {
+  background-color: red;
+}
+
+.search-button {
+  color: steelblue;
+  background-color: white;
+}
+
+.button {
+  color: white;
+  background-color: steelblue;
+}
+
+.gap {
+  margin-right: 10px;
 }

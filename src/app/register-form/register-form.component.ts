@@ -13,11 +13,11 @@ export class RegisterFormComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
   hide = true;
   user: any = {};
-  router: Router;
 
   constructor(
     private formBuilder: FormBuilder,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {

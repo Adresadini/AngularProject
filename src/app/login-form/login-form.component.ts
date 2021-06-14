@@ -49,7 +49,7 @@ export class LoginFormComponent implements OnInit {
           }
 
           localStorage.setItem('ConnectedUser', JSON.stringify(value.email));
-          (<any>this.router).navigate(['/homepage']);
+          (<any>this.router).navigate(['home']);
         }
       });
       if (!ok) {

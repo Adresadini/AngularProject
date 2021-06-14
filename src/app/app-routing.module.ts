@@ -14,7 +14,7 @@ const routes: Routes = [
     component: RegisterFormComponent,
   },
   {
-    path: 'homepage',
+    path: 'home',
     component: MyTableComponent,
   },
   {
