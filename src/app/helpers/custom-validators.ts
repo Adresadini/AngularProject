@@ -33,5 +33,5 @@ export class CustomValidators {
   public static numbers(control: AbstractControl) {
     const regExp: RegExp = /[0-9]/;
     return regExp.test(control.value) ? null : { number: true };
-}
+  }
 }

@@ -54,6 +54,7 @@ export class MyTableComponent implements OnInit, AfterViewInit {
     let table = [];
     if (localStorage.getItem('MyTable')) {
       table = JSON.parse(localStorage.getItem('MyTable'));
+      table.sort();
       table.forEach((element) => {
         this.myList.push(element);
       });

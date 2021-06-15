@@ -63,10 +63,8 @@ export class AddElementComponent implements OnInit {
     let table = [];
     if (localStorage.getItem('MyTable')) {
       table = JSON.parse(localStorage.getItem('MyTable'));
-      table = [element, ...table];
-    } else {
-      table = [element];
     }
+    table.push(element);
     localStorage.setItem('MyTable', JSON.stringify(table));
     localStorage.setItem(
       'TablePos',
