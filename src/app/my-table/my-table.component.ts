@@ -57,6 +57,9 @@ export class MyTableComponent implements OnInit, AfterViewInit {
       table.forEach((element) => {
         this.myList.push(element);
       });
+    } else {
+      localStorage.setItem('MyTable', JSON.stringify(this.myList));
+      localStorage.setItem('TablePos', '1');
     }
   }
 
@@ -75,6 +78,8 @@ export class MyTableComponent implements OnInit, AfterViewInit {
       this.dataSource.data = this.myList;
     }
     localStorage.setItem('MyTable', JSON.stringify(this.myList));
+    let tablePos = JSON.parse(localStorage.getItem('TablePos'));
+    localStorage.setItem('TablePos', JSON.stringify(Number(tablePos) - 1));
   }
 
   searchByName() {

@@ -23,7 +23,7 @@ export class AddElementComponent implements OnInit {
 
   ngOnInit(): void {
     this.trailForm = this.fb.group({
-      position: ['', Validators.required],
+      position: [JSON.parse(localStorage.getItem('TablePos'))],
       name: ['', Validators.required],
       startPoint: ['', Validators.required],
       endPoint: ['', Validators.required],
@@ -68,6 +68,10 @@ export class AddElementComponent implements OnInit {
       table = [element];
     }
     localStorage.setItem('MyTable', JSON.stringify(table));
+    localStorage.setItem(
+      'TablePos',
+      JSON.stringify(Number(element.position) + 1)
+    );
   }
   onNoClick(): void {
     this.dialogRef.close();
