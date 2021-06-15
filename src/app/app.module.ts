@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AddElementComponent } from './add-element/add-element.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,10 +20,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MyTableComponent } from './my-table/my-table.component';
-import { AddElementComponent } from './add-element/add-element.component';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
-  declarations: [AppComponent, LoginFormComponent, RegisterFormComponent, MyTableComponent, AddElementComponent],
+  declarations: [
+    AppComponent,
+    LoginFormComponent,
+    RegisterFormComponent,
+    MyTableComponent,
+    AddElementComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,6 +46,7 @@ import { AddElementComponent } from './add-element/add-element.component';
     MatTableModule,
     MatCheckboxModule,
     MatDialogModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
