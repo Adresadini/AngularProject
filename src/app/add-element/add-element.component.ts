@@ -77,6 +77,22 @@ export class AddElementComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  get name() {
+    return this.trailForm.get('name');
+  }
+
+  get startPoint() {
+    return this.trailForm.get('startPoint');
+  }
+
+  get endPoint() {
+    return this.trailForm.get('endPoint');
+  }
+
+  get touristicMarking() {
+    return this.trailForm.get('touristicMarking');
+  }
+
   get length() {
     return this.trailForm.get('weight');
   }
