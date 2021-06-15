@@ -58,7 +58,17 @@ export class AddElementComponent implements OnInit {
     });
   }
 
-  onAdd() {}
+  onAdd() {
+    let element = this.trailForm.value;
+    let table = [];
+    if (localStorage.getItem('MyTable')) {
+      table = JSON.parse(localStorage.getItem('MyTable'));
+      table = [element, ...table];
+    } else {
+      table = [element];
+    }
+    localStorage.setItem('MyTable', JSON.stringify(table));
+  }
   onNoClick(): void {
     this.dialogRef.close();
   }

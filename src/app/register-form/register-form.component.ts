@@ -82,8 +82,7 @@ export class RegisterFormComponent implements OnInit {
     };
   }
 
-  onRegistration() {
-    //Replace with better conditions
+  onRegistration(): void {
     if (
       this.email.invalid ||
       this.password.invalid ||
