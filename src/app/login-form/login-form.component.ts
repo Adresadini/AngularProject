@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginFormComponent implements OnInit {
   hide = true;
   loginFormInstance: FormGroup = new FormGroup({});
+  remember = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,6 +29,32 @@ export class LoginFormComponent implements OnInit {
       password: ['', Validators.required],
       rememberMe: [false],
     });
+    this.loadRemember();
+  }
+
+  loadRemember() {
+    if (
+      localStorage.getItem('RememberUser') &&
+      JSON.parse(localStorage.getItem('RememberUser')) !== ''
+    ) {
+      let user = JSON.parse(localStorage.getItem('RememberUser'));
+      this.loginFormInstance = this.formBuilder.group({
+        email: [user.email, Validators.required],
+        password: [user.password, Validators.required],
+        rememberMe: [user.rememberMe],
+      });
+      this.remember = user.rememberMe;
+    } else {
+      localStorage.setItem('RememberUser', JSON.stringify(''));
+    }
+  }
+
+  checkRemember(user) {
+    if (user.rememberMe) {
+      localStorage.setItem('RememberUser', JSON.stringify(user));
+    } else {
+      localStorage.setItem('RememberUser', JSON.stringify(''));
+    }
   }
 
   onLogin() {
@@ -44,6 +71,8 @@ export class LoginFormComponent implements OnInit {
         if (value.email === user.email && value.password === user.password) {
           ok = true;
           localStorage.setItem('ConnectedUser', JSON.stringify(value.email));
+          user.rememberMe = this.remember;
+          this.checkRemember(user);
           this.router.navigateByUrl('/home');
           this.openSuccessSnackBar();
         }
@@ -88,5 +117,9 @@ export class LoginFormComponent implements OnInit {
 
   get rememberMe() {
     return this.loginFormInstance.get('rememberMe');
+  }
+
+  set remenberMe(newValue) {
+    this.loginFormInstance.patchValue({ rememberMe: newValue });
   }
 }
